@@ -71,9 +71,11 @@ function NarrowItDownController(MenuSearchService) {
         menuController.message = "Nothing found";
         menuController.showNothingFoundMessage = true;
       }
+      else{
       menuController.message = "";
       menuController.foundItems = foundItems;
-    })
+    }
+  })
     .catch(function (error) {
       menuController.message = "ERROR! ERROR!, ";
       console.log(error);
