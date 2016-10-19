@@ -28,17 +28,6 @@ function FoundItemsDirective() {
 
 function FoundItemsDirectiveController() {
   var foundList = this;
-
-  foundList.cookiesInList = function () {
-    for (var i = 0; i < foundList.items.length; i++) {
-      var name = foundList.items[i].name;
-      if (name.toLowerCase().indexOf("cookie") !== -1) {
-        return true;
-      }
-    }
-
-    return false;
-  };
 }
 
 
@@ -100,7 +89,7 @@ function MenuSearchService($http, ApiBasePath) {
     .then(function (response) {
       var menuItems = response.data.menu_items;
       var foundItems= menuItems.filter(function (el) {
-        return el.name.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
+        return el.description.toLowerCase().indexOf(searchTerm.toLowerCase()) !== -1;
       });
 
       return foundItems;
