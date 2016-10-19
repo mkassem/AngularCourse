@@ -62,7 +62,8 @@ function NarrowItDownController(MenuSearchService) {
       return;
     }
 
-menuController.message = "please wait untill loading from server ...";
+    menuController.foundItems = [];
+    menuController.message = "please wait untill loading from server ...";
     var promise = MenuSearchService.getMatchedMenuItems(menuController.searchTerm);
 
     promise.then(function (foundItems) {
