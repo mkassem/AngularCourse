@@ -9,8 +9,6 @@ CategoriesController.$inject = ['MenuDataService', 'categories'];
 function CategoriesController(MenuDataService, categories) {
   var categorieslist = this;
   categorieslist.items = categories;
-
-  categorieslist.items = [{name :"sss"}, {name:"222"}]
 }
 
 })();
