@@ -1,8 +1,11 @@
-Categories
-<div>{{$ctrl.items}}</div>
-Categories
 <ul>
-  <li ng-repeat="item in $ctrl.items" >
-    {{ item.name }}
+<li ng-repeat="item in $ctrl.items" >
+  <div class="row">
+    <div class="col-sm-3">
+      <a ui-sref="categoryItems({categoryId: item.short_name})" > {{ item.name }} </a>
+    </div>
+    <div class="col-sm-4">{{ item.special_instructions }}</div>
+  </div>
+    <!-- <a ui-sref="categoryItems({categoryId: item.short_name})" > {{ item.name }} </a> -->
   </li>
 </ul>

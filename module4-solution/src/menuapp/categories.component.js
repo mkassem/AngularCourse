@@ -2,7 +2,7 @@
 'use strict';
 
 angular.module('data')
-.component('categories', {
+.component('categoryList', {
   templateUrl: 'src/menuapp/templates/categories.template.html',
   bindings: {
     items: '<'
