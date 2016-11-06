@@ -1,8 +1,8 @@
 <div class="container">
 
 <form name='signupForm' novalidate>
-        <input type="text" name="firstName" placeholder="First Name" class="form-control"
-          ng-model="signupCtrl.user.username" required>
+        <input type="text" name="firstName" placeholder="First Name" class="form-control "
+          ng-model="signupCtrl.user.firstName" required>
           <span
             ng-if="signupForm.firstName.$error.required && signupForm.firstName.$touched">
             first name is required
@@ -10,7 +10,7 @@
           <br>
 
           <input type="text" name="lastName" placeholder="Last Name" class="form-control"
-            ng-model="signupCtrl.user.lastname" required>
+            ng-model="signupCtrl.user.lastName" required>
             <span
               ng-if="signupForm.lastName.$error.required && signupForm.lastName.$touched">
               last name is required
@@ -32,10 +32,20 @@
             Phone must be in the format ###-###-####.
           </span>
           <br>
+          <input type="text" name="menuItemId" placeholder="Menu Item Id" class="form-control"
+            ng-model="signupCtrl.user.menuItemId">
+            <span
+              ng-if="signupForm.menuItemId.$error.serverMessage && signupForm.menuItemId.$touched">
+              No such menu number exists
+            </span>
+            <br>
 
         <button class="btn btn-primary btn-block"
           ng-disabled="signupForm.$invalid"
           ng-click="signupCtrl.submit()">Submit</button>
+          <div class="alert alert-success fade in" ng-if="signupCtrl.infoSaved">
+              Your information has been saved
+          </div>
       </form>
 
  </div>
